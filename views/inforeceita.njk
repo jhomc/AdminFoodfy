@@ -1,0 +1,18 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+    
+    <div class="carditems">
+        <div class="infoimg">
+            <img src="{{item.image}}" alt="Imagem de {{item.title}}">
+        </div>
+        <div class="infotitle">{{item.title}}</div>
+        <div class="infoauthor">Por {{item.author}}</div>
+    </div>
+
+    <div class="ingredients">
+    
+    </div> 
+
+
+{% endblock %}
