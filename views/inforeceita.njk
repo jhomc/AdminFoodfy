@@ -10,9 +10,36 @@
         <div class="infoauthor">Por {{item.author}}</div>
     </div>
 
-    <div class="ingredients">
-    
-    </div> 
+    <div>
+        <div class="showhide">
+            <p>Ingredientes</p>
+            <div id="cursor" class="hideA">Esconder</div>
+            <div id="cursor" class="showA hidden">Mostrar</div>
+        </div>
+        <div id="text" class="ingredients">{{item.ingredients}}</div>
+    </div>
 
+     <div>
+        <div class="showhide">
+            <p>Modo de Preparo</p>
+            <div id="cursor" class="hideB">Esconder</div>
+            <div id="cursor" class="showB hidden">Mostrar</div>
+        </div>
+        <div id="text" class="preparation">{{item.preparation}}</div>
+    </div>
+    
+     <div>
+        <div class="showhide">
+            <p>Informações adicionais</p>
+            <div id="cursor" class="hideC">Esconder</div>
+            <div id="cursor" class="showC hidden">Mostrar</div>
+        </div>
+        <div id="text" class="information">{{item.information}}</div>
+    </div>
+    
+    
+
+
+    <script src="/scripts.js"></script>
 
 {% endblock %}
