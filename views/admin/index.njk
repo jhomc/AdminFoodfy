@@ -1,0 +1,26 @@
+{% extends "layoutadmin.njk" %}
+
+
+
+{% block content %}
+    <section class="admincards">
+        {% for item in items%}
+            <card id = {{items.indexOf(item)}}>
+                <div class="cardimg">
+                    <img src="{{item.image}}" alt="Imagem de {{item.title}}">
+                </div>
+                <div class="admincardinfo">
+                    <div class="cardinfo">{{item.title}}</div>
+                    <div class="cardauthor" id="Jorge Relato">Por {{item.author}}</div>
+                    <a href="">Visualizar</a>
+                </div>
+            </card>    
+        {% endfor %}
+    </section>
+
+
+   
+
+    <script src="scripts.js"></script>
+
+{% endblock %}
