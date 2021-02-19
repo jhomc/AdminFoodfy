@@ -33,6 +33,9 @@ routes.get("/inforeceita/:index", function (req, res) {
     }
 })  
 
+
+
 routes.get("/admin", admin.index )
+routes.get("/admin/recipedetails/:index", admin.details)
 
 module.exports = routes

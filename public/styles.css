@@ -31,6 +31,13 @@ footer {
     font-size: 14px;
     color: #999999;
 }
+
+h2 {
+    font-weight: bold;
+    font-size: 24px;
+    color: #111111;
+    margin: 50px 351.5px 0px;
+}
 /*===CABECALHO===*/
 
 .links {
@@ -273,7 +280,7 @@ footer {
 .admincards {
     max-width: 1200px;
     min-height: 500px;
-    margin: 50px auto;
+    margin: 30px auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
 
@@ -293,6 +300,31 @@ footer {
     height: 80px;
 }
 
+.admincardinfo a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #6558C3;
+    font-weight: bold;
+}
+
 .admincards .cardauthor {
     padding-bottom: 10px;
+}
+
+/*== RECIPEDETAILS ==*/
+
+.detailhead {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    place-items: flex-end;
+    margin: 50px auto;
+    width: 1000px;
+
+}
+
+.detailhead p {
+    font-weight: bold;
+    font-size: 24px;
+    color: #111111;
 }

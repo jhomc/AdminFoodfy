@@ -1,0 +1,50 @@
+{% extends "layoutadmin.njk" %}
+   
+
+
+   {% block content %} 
+        <div class="carditems">
+            <div class="detailhead">
+                <p>Receita: {{item.title}}</p>
+                <a href="">Editar receita</a>
+            </div>
+            <div class="infoimg">
+                <img src="{{item.image}}" alt="Imagem de {{item.title}}">
+            </div>
+            <div class="infotitle">{{item.title}}</div>
+            <div class="infoauthor">Por {{item.author}}</div>
+        </div>
+
+        <div class="inforeceita">
+            <div class="showhide">
+                <p>Ingredientes</p>
+                <div id="cursor" class="hideA">Esconder</div>
+                <div id="cursor" class="showA hidden">Mostrar</div>
+            </div>
+            <div id="text" class="ingredients">{{item.ingredients}}</div>
+        </div>
+
+        <div class="inforeceita">
+            <div class="showhide">
+                <p>Modo de Preparo</p>
+                <div id="cursor" class="hideB">Esconder</div>
+                <div id="cursor" class="showB hidden">Mostrar</div>
+            </div>
+            <div id="text" class="preparation">{{item.preparation}}</div>
+        </div>
+        
+        <div class="inforeceita">
+            <div class="showhide">
+                <p>Informações adicionais</p>
+                <div id="cursor" class="hideC">Esconder</div>
+                <div id="cursor" class="showC hidden">Mostrar</div>
+            </div>
+            <div id="text" class="information">{{item.information}}</div>
+        </div>
+        
+        
+
+
+        <script src="/scripts.js"></script>
+
+    {% endblock %}
