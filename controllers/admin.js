@@ -1,19 +1,28 @@
 const fs = require('fs')
-const recipes = require("../data.js")
+const data = require("../data.json")
 
 
 
 exports.index = function(req, res) {
-    return res.render("admin/index", { items: recipes })
+    return res.render("admin/index", { items: data.recipes })
 }
 exports.details = function (req, res) {
-    const recipe = [...recipes];
     const recipeIndex = req.params.index;
     
-    if(!recipe[recipeIndex]) {
+    
+    const foundRecipe = data.recipes.find(function(recipe, index) {
+
+        if (recipeIndex == index) {
+            return recipe
+        }
+    })
+    if(!foundRecipe) {
         return res.status(404).send("pagina não encontrada")
     }
     else {
-        return res.render("admin/recipedetails", {item: recipe[recipeIndex]})
+        return res.render("admin/recipedetails", {item: foundRecipe})
     }
+}
+exports.edit = function(req, res ) {
+    return res.render('admin/edit')
 }

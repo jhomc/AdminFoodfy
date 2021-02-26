@@ -4,7 +4,7 @@
 
 {% block content %}
     <section class="cards">
-        {% for item in items%}
+        {% for item in items %}
             <card class="recipecard" id = {{items.indexOf(item)}}>
                 <div class="cardimg">
                     <img src="{{item.image}}" alt="Imagem de {{item.title}}">

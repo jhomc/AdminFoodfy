@@ -318,7 +318,7 @@ h2 {
     flex-wrap: nowrap;
     justify-content: space-between;
     place-items: flex-end;
-    margin: 50px auto;
+    margin: 50px auto 20px;
     width: 1000px;
 
 }
@@ -327,4 +327,28 @@ h2 {
     font-weight: bold;
     font-size: 24px;
     color: #111111;
+}
+
+.detailhead a,
+.buttons button:last-child {
+    padding: 8px 16px;
+    background-color:#6558C3;
+    color: white;
+    border-radius: 4px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/*== EDIT ==*/
+
+.buttons button:first-child {
+    padding: 8px 16px;
+    background-color:#DC4747;
+    color: white;
+    border-radius: 4px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 10px;
 }

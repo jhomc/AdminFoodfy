@@ -1,6 +1,6 @@
 const express = require('express')
 const routes = express.Router()
-const receitas = require('./data')
+const data = require('./data.json')
 const admin = require('./controllers/admin')
 const users = require('./controllers/users')
 
@@ -18,24 +18,34 @@ routes.get("/users/sobre", function(req, res) {
 })
 
 routes.get("/users/receitas", function(req, res) {
-    return res.render("users/receitas", { items: receitas})
+    
+    return res.render("users/receitas", { items: data.recipes })
 })
 
 routes.get("/inforeceita/:index", function (req, res) {
-    const recipes = [...receitas];
     const recipeIndex = req.params.index;
     
-    if(!recipes[recipeIndex]) {
+    
+    const foundRecipe = data.recipes.find(function(recipe, index) {
+
+        if (recipeIndex == index) {
+            return recipe
+        }
+    })
+
+    if(!foundRecipe) {
         return res.status(404).send("pagina não encontrada")
     }
     else {
-        return res.render("users/inforeceita", {item: recipes[recipeIndex]})
+        return res.render("users/inforeceita", { item: foundRecipe })
     }
+
 })  
 
 
 
 routes.get("/admin", admin.index )
 routes.get("/admin/recipedetails/:index", admin.details)
+routes.get("/admin/edit", admin.edit)
 
 module.exports = routes
