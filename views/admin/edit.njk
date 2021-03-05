@@ -3,12 +3,20 @@
 
 
    {% block content %} 
-        <div class="carditems">
-            <div class="detailhead">
-                <p>Editar receita</p>
-                <div class="buttons">
-                    <button type="submit">Deletar</button>
-                    <button type="submit">Salvar receita</button>  
-                </div>
+    <div class="carditems">
+        <div class="detailhead">
+            <p>Editar receita</p>
+            <div class="buttons">
+                <button type="submit">Deletar</button>
+                <button type="submit">Salvar receita</button>  
             </div>
+        </div>
+        <section class="details">
+            <form action="" method="post" action="/admin?_method=PUT">   
+            {% include 'admin/fields.njk' %}
+            </form>
+        </section>
+
+        
+
     {% endblock %}

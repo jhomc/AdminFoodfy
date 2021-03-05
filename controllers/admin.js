@@ -20,9 +20,23 @@ exports.details = function (req, res) {
         return res.status(404).send("pagina não encontrada")
     }
     else {
-        return res.render("admin/recipedetails", {item: foundRecipe})
+        return res.render("admin/recipedetails", { item: foundRecipe, recipeIndex })
     }
 }
 exports.edit = function(req, res ) {
-    return res.render('admin/edit')
+    const recipeIndex = req.params.index;
+    
+    
+    const foundRecipe = data.recipes.find(function(recipe, index) {
+
+        if (recipeIndex == index) {
+            return recipe
+        }
+    })
+    if(!foundRecipe) {
+        return res.status(404).send("pagina não encontrada")
+    }
+    else {
+        return res.render('admin/edit', { recipe: foundRecipe })
+    }
 }
